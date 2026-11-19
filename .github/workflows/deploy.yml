@@ -1,3 +1,5 @@
+# First run: Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+# (GITHUB_TOKEN cannot enable Pages for the first time; the repository setting must be on.)
 name: Deploy portfolio
 
 on:
