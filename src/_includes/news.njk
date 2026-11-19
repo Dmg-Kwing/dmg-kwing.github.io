@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+<main id="main" class="page">
+<ol class="news-list">
+  {% for entry in entries %}
+  <li><time>{{ entry.time }}</time><div><h2>{{ entry.title }}</h2><p>{{ entry.text }}</p></div></li>
+  {% endfor %}
+</ol>
+<p class="news-empty">{{ emptyText }}</p>
+</main>

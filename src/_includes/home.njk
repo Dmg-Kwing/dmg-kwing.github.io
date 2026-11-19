@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<main id="main" class="home">
+<div class="gate-grid">
+{% for project in collections.projects %}
+<a class="gate" href="{{ project.url }}">
+  <img src="{{ project.data.cover }}" alt="{{ project.data.coverAlt }}" width="{{ project.data.coverWidth }}" height="{{ project.data.coverHeight }}" loading="{{ 'eager' if loop.first else 'lazy' }}" decoding="async">
+  <span class="gate-copy"><span class="gate-num">{{ loop.index | pad2 }}</span><span class="gate-title">{{ project.data.coverTitle or project.data.title }}</span><span class="gate-meta">{{ project.data.year }}</span></span>
+</a>
+{% endfor %}
+</div>
+</main>

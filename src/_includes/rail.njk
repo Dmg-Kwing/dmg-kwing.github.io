@@ -1,0 +1,22 @@
+<aside class="rail">
+  <div class="rail-top">
+    <a class="rail-brand" href="/"><span class="brand-mark"></span>INDEX</a>
+  </div>
+  <nav class="rail-nav" aria-label="Main navigation">
+    <div class="rail-group">
+      <span class="rail-group-label">COURSEWORK</span>
+      {% for project in collections.projects %}
+      <a class="rail-link rail-link--project"{% if page.url == project.url %} aria-current="page"{% endif %} href="{{ project.url }}"><span>{{ project.data.navTitle or project.data.title }}</span><span class="rail-num">{{ loop.index | pad2 }}</span></a>
+      {% endfor %}
+    </div>
+    <div class="rail-group">
+      <a class="rail-link"{% if page.url == "/drawings/" %} aria-current="page"{% endif %} href="/drawings/">DRAWINGS</a>
+      <a class="rail-link"{% if page.url == "/writing/" %} aria-current="page"{% endif %} href="/writing/">WRITING</a>
+    </div>
+    <div class="rail-group">
+      <a class="rail-link"{% if page.url == "/news/" %} aria-current="page"{% endif %} href="/news/">NEWS</a>
+      <a class="rail-link"{% if page.url == "/playing/" %} aria-current="page"{% endif %} href="/playing/">PLAYING</a>
+      <a class="rail-link"{% if page.url == "/about/" %} aria-current="page"{% endif %} href="/about/">ABOUT</a>
+    </div>
+  </nav>
+</aside>

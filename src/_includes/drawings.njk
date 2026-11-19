@@ -1,0 +1,22 @@
+---
+layout: base.njk
+---
+<main id="main" class="reel-page reel-page--bare">
+<div class="reel-shell" data-reel-shell>
+  <div class="reel" data-reel aria-label="绘画作品，横向拖动观看">
+    <div class="reel-track">
+      {% for image in gallery %}
+      <figure class="slide slide--draw{{ ' ' + image.class if image.class else '' }}">
+        <a href="{{ image.src }}" data-lightbox="drawings" data-caption="" data-no-count="true">
+          <img src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}" loading="{{ 'eager' if loop.index <= 2 else 'lazy' }}" decoding="async">
+        </a>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="reel-ui">
+    <div class="reel-progress"><span data-progress></span></div>
+    <div class="reel-buttons"><button type="button" data-prev aria-label="上一张">←</button><button type="button" data-next aria-label="下一张">→</button></div>
+  </div>
+</div>
+</main>

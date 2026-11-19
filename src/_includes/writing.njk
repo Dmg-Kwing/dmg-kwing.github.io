@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<main id="main" class="page">
+{% for article in collections.articles %}
+<div class="paper-shell" data-paper>
+  <article class="paper">
+    <div class="paper-meta"><span>{{ article.data.year }}</span><span class="paper-kind">{{ article.data.kind }}</span></div>
+    <div class="paper-body">
+      <h2>{{ article.data.title }}</h2>
+      <div class="abstract">{% for para in article.data.abstract %}<p>{{ para }}</p>{% endfor %}</div>
+      <p class="keywords">{{ article.data.keywords }}</p>
+      <div class="paper-full" id="full-{{ article.page.fileSlug }}" hidden>{{ article.templateContent | safe }}</div>
+    </div>
+  </article>
+  <div class="paper-action">
+    <button class="paper-toggle" type="button" aria-expanded="false" aria-controls="full-{{ article.page.fileSlug }}">展开</button>
+  </div>
+</div>
+{% endfor %}
+</main>
