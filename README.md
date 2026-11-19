@@ -1,6 +1,6 @@
 # my-portfolio
 
-Eleventy 版作品集。内容在 `src/*.md` 与 `src/projects/*.md`，图片在 `public/imgs`，样式在 `src/assets/style.css`。
+Eleventy 版作品集。内容在 `src/*.md`、`src/projects/*.md` 与 `src/articles/*.md`，图片在 `public/imgs`，样式在 `src/assets/style.css`。新手维护请看 [HANDBOOK.md](HANDBOOK.md)。
 
 ## 本地预览
 
@@ -13,13 +13,13 @@ pnpm start
 
 ## 发布到 GitHub Pages
 
-远程仓库：<https://github.com/Dmg-Kwing/Jiong.github.io>
+远程仓库：<https://github.com/Dmg-Kwing/Dmg-Kwing.github.io>
 
-首次发布前，在仓库 **Settings → Pages → Build and deployment** 中把 **Source** 设为 **GitHub Actions**。之后每次 push 到 `main`，`.github/workflows/deploy.yml` 会自动构建并发布；也可以在 Actions 页面手动运行 `workflow_dispatch`。
+发布地址：<https://dmg-kwing.github.io/>
 
-实际发布地址是项目页路径：<https://dmg-kwing.github.io/Jiong.github.io/>
+仓库名必须是 `Dmg-Kwing.github.io`（和 GitHub 用户名一致），这样才是用户主页，直接挂在根地址。每次 push 到 `main`，`.github/workflows/deploy.yml` 会自动构建并发布；也可以在 Actions 页面手动运行 `workflow_dispatch`。
 
-因为仓库名不是 `<用户名>.github.io`，Pages 会把它放在 `/Jiong.github.io/` 子路径下。工作流构建时设置了 `PATH_PREFIX=/Jiong.github.io/`，所有 `/assets`、`/imgs` 和站内链接都会自动加上这个前缀；本地预览仍使用根路径。若以后改仓库名，需要同步修改 `.github/workflows/deploy.yml` 里的 `PATH_PREFIX`。
+首次发布时需要在仓库 **Settings → Pages → Build and deployment** 中把 **Source** 设为 **GitHub Actions**；这个仓库已经设置过了。以后不要随便改仓库名，否则地址会变。
 
 ## 内容结构
 

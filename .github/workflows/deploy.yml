@@ -20,9 +20,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      # Project Pages URL: https://dmg-kwing.github.io/Jiong.github.io/
-      PATH_PREFIX: /Jiong.github.io/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
