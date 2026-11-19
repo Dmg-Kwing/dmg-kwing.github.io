@@ -17,7 +17,9 @@ pnpm start
 
 首次发布前，在仓库 **Settings → Pages → Build and deployment** 中把 **Source** 设为 **GitHub Actions**。之后每次 push 到 `main`，`.github/workflows/deploy.yml` 会自动构建并发布；也可以在 Actions 页面手动运行 `workflow_dispatch`。
 
-发布地址：<https://dmg-kwing.github.io/>
+实际发布地址是项目页路径：<https://dmg-kwing.github.io/Jiong.github.io/>
+
+因为仓库名不是 `<用户名>.github.io`，Pages 会把它放在 `/Jiong.github.io/` 子路径下。工作流构建时设置了 `PATH_PREFIX=/Jiong.github.io/`，所有 `/assets`、`/imgs` 和站内链接都会自动加上这个前缀；本地预览仍使用根路径。若以后改仓库名，需要同步修改 `.github/workflows/deploy.yml` 里的 `PATH_PREFIX`。
 
 ## 内容结构
 
